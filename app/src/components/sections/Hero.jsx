@@ -59,7 +59,6 @@ const Hero = () => {
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-foreground bg-gradient-to-r from-white via-primary to-primary bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(0,255,127,0.3)]">
           Hola, soy <span className="text-primary">[Tu Nombre]</span>
         </h1>
-        </h1>
         
         <div className="text-2xl md:text-3xl font-medium text-foreground/80 mb-10 h-12 flex items-center justify-center">
           <span className="border-r-4 border-primary pr-2 animate-pulse">{text}</span>
