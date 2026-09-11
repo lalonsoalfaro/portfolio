@@ -9,8 +9,8 @@ const Hero = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const roles = [
-    "Software Engineering Student",
-    "Junior Software Developer",
+    "Estudiante de Ingeniería del Software",
+    "Desarrollador de Software Junior",
   ];
 
   useEffect(() => {
