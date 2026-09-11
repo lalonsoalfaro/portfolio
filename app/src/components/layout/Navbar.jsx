@@ -1,45 +1,79 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '../../assets/luisdev-logo-512.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   const navLinks = [
-    { name: 'Inicio', href: '#home' },
-    { name: 'Sobre mí', href: '#about' },
-    { name: 'Habilidades', href: '#skills' },
-    { name: 'Proyectos', href: '#projects' },
-    { name: 'Educación', href: '#education' },
-    { name: 'Contacto', href: '#contact' },
+    { name: 'Inicio', href: '#home', id: 'home' },
+    { name: 'Sobre mí', href: '#about', id: 'about' },
+    { name: 'Habilidades', href: '#skills', id: 'skills' },
+    { name: 'Proyectos', href: '#projects', id: 'projects' },
+    { name: 'Educación', href: '#education', id: 'education' },
+    { name: 'Contacto', href: '#contact', id: 'contact' },
   ];
+
+  useEffect(() => {
+    const sections = navLinks.map(link => document.getElementById(link.id));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' }
+    );
+
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <div className="flex-shrink-0 font-bold text-xl text-primary tracking-tighter">
-            [PORTFOLIO]
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <img src={logo} alt="luisdev logo" className="h-9 w-9" />
+            <span className="font-bold text-xl text-primary tracking-tighter">
+              luisdev
+            </span>
           </div>
-          
-          {/* Desktop Menu */}
+
+          {/* Menú de escritorio */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
-                className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
+              <a
+                key={link.name}
+                href={link.href}
+                className={`text-sm font-medium transition-colors ${
+                  activeSection === link.id
+                    ? 'text-primary'
+                    : 'text-foreground/70 hover:text-primary'
+                }`}
               >
                 {link.name}
               </a>
             ))}
           </div>
 
-          {/* Mobile Button */}
+          {/* Botón móvil */}
           <div className="md:hidden flex items-center">
-            <Button 
-              variant="ghost" 
-              size="icon" 
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -48,14 +82,18 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Menú móvil */}
       {isOpen && (
         <div className="md:hidden bg-background border-b border-border px-4 pt-2 pb-6 space-y-1">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="block px-3 py-2 text-base font-medium text-foreground/70 hover:text-primary hover:bg-accent/10 rounded-md transition-colors"
+              className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
+                activeSection === link.id
+                  ? 'text-primary bg-accent/10'
+                  : 'text-foreground/70 hover:text-primary hover:bg-accent/10'
+              }`}
               onClick={() => setIsOpen(false)}
             >
               {link.name}

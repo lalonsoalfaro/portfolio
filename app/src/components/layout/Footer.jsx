@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-background border-t border-border py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-6 font-bold text-lg text-primary">
-          [Tu Nombre]
+          &#123; Luis Alonso Alfaro Cerdas &#125;
         </div>
         <div className="flex justify-center space-x-6 mb-6">
           <a href="#" className="text-foreground/60 hover:text-primary transition-colors">
@@ -20,7 +20,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="text-sm text-foreground/50">
-          © {new Date().getFullYear()} [Tu Nombre]. All rights reserved.
+          © {new Date().getFullYear()} Portafolio &#123; Luis Alonso Alfaro Cerdas &#125;. Todos los derechos reservados.
         </p>
       </div>
     </footer>

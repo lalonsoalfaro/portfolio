@@ -91,7 +91,7 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Navigation Buttons */}
+          {/* Botones de navegación */}
           <button 
             onClick={prevProject}
             className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:bg-primary/80 transition-all z-10"
@@ -106,7 +106,7 @@ const Projects = () => {
           </button>
         </div>
 
-        {/* Pagination Dots */}
+        {/* Puntos de paginación */}
         <div className="flex justify-center gap-2 mt-8">
           {projects.map((_, index) => (
             <button 

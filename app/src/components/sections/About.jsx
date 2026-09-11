@@ -1,4 +1,4 @@
-import React from 'react';
+import profilePic from '../../assets/profile-pic.jpeg';
 
 const About = () => {
   return (
@@ -10,26 +10,30 @@ const About = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="aspect-square bg-muted rounded-2xl border border-border flex items-center justify-center text-foreground/30">
-            [Imagen de Perfil Placeholder]
+          <div className="aspect-square max-w-sm mx-auto bg-muted rounded-2xl border border-border overflow-hidden">
+            <img 
+              src={profilePic} 
+              alt="Foto de perfil" 
+              className="w-full h-full object-cover"
+              style={{ objectPosition: 'center 20%' }}
+            />
           </div>
-          <div className="space-y-6 text-left">
+          <div className="space-y-6 text-left cursor-default">
             <p className="text-lg text-foreground/80 leading-relaxed">
-              [Descripción profesional placeholder: Aquí puedes hablar sobre tu pasión por la programación, 
-              tus objetivos a corto y largo plazo, y qué te motiva como desarrollador de software.]
-            </p>
-            <p className="text-lg text-foreground/80 leading-relaxed">
-              [Más información sobre tu enfoque técnico, metodologías que sigues o intereses específicos 
-              dentro del ecosistema de desarrollo.]
+              Futuro Ingeniero de Software formado en la Universidad Técnica 
+              Nacional (UTN) de Costa Rica, con experiencia práctica en el desarrollo de soluciones 
+              web y de escritorio utilizando tecnologías como React, C#, .NET y SQL 
+              Server. Me motiva transformar requerimientos lógicos en software 
+              limpio, escalable y bien estructurado.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="p-4 rounded-xl bg-muted/50 border border-border">
-                <div className="text-primary font-bold text-xl mb-1">[X]+</div>
-                <div className="text-sm text-foreground/60">Años de estudio</div>
+              <div className="p-4 rounded-xl bg-muted/50 border border-border cursor-default">
+                <div className="text-primary font-bold text-xl mb-1">POO Avanzada</div>
+                <div className="text-sm text-foreground/60">Diseño Orientado a Objetos</div>
               </div>
-              <div className="p-4 rounded-xl bg-muted/50 border border-border">
-                <div className="text-primary font-bold text-xl mb-1">[X]+</div>
-                <div className="text-sm text-foreground/60">Proyectos realizados</div>
+              <div className="p-4 rounded-xl bg-muted/50 border border-border cursor-default">
+                <div className="text-primary font-bold text-xl mb-1">Nivel 6</div>
+                <div className="text-sm text-foreground/60">UTN - Ingeniería del Software</div>
               </div>
             </div>
           </div>
