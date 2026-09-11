@@ -78,7 +78,7 @@ const Projects = () => {
                       ))}
                     </div>
                     <div className="flex items-center gap-4">
-                      <Button variant="outline" size="sm" className="flex-1 gap-2">
+                      <Button variant="outline" size="sm" className="flex-1 gap-2 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,127,0.3)] hover:border-primary/50 transition-all duration-300">
                         <Github className="h-4 w-4" /> Código
                       </Button>
                       <Button size="sm" className="flex-1 gap-2">

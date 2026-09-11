@@ -81,7 +81,7 @@ const Hero = () => {
           <Button size="lg" className="px-8 py-6 text-lg group" onClick={scrollToProjects}>
             Ver Proyectos <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button size="lg" variant="outline" className="px-8 py-6 text-lg" onClick={scrollToContact}>
+          <Button size="lg" variant="outline" className="px-8 py-6 text-lg hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,127,0.3)] hover:border-primary/50 transition-all duration-300" onClick={scrollToContact}>
             Contactar
           </Button>
         </div>
