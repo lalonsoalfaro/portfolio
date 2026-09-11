@@ -20,20 +20,30 @@ const Navbar = () => {
     const sections = navLinks.map(link => document.getElementById(link.id));
 
     const observer = new IntersectionObserver(
+      // Se ejecuta cada vez que un elemento observado cambia su visibilidad.
       (entries) => {
+        // Recorre cada elemento que cambió de estado.
         entries.forEach((entry) => {
+          // Solo actúa si el elemento ES visible actualmente.
           if (entry.isIntersecting) {
+            // Guarda el id de esa sección como la sección activa.
             setActiveSection(entry.target.id);
           }
         });
       },
-      { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' }
+      // Opciones: cuándo se considera "visible" un elemento.
+      { 
+        threshold: 0.3, // se activa cuando al menos 30% del elemento es visible.
+        rootMargin: '-80px 0px -50% 0px' // ajusta el área: -80px arriba (evita el navbar), -50% abajo (activa al cruzar la mitad de pantalla).
+      }
     );
 
+    // Asigna el trabajo de vigilancia a cada sección de la página.
     sections.forEach((section) => {
       if (section) observer.observe(section);
     });
 
+    // Limpia todo cuando el componente desaparece o se desmonta.
     return () => {
       sections.forEach((section) => {
         if (section) observer.unobserve(section);
