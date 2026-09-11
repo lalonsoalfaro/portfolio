@@ -33,8 +33,8 @@ const Navbar = () => {
       },
       // Opciones: cuándo se considera "visible" un elemento.
       { 
-        threshold: 0.3, // se activa cuando al menos 30% del elemento es visible.
-        rootMargin: '-80px 0px -50% 0px' // ajusta el área: -80px arriba (evita el navbar), -50% abajo (activa al cruzar la mitad de pantalla).
+        threshold: 0.1,
+        rootMargin: '-80px 0px -40% 0px'
       }
     );
 

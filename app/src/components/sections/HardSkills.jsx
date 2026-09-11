@@ -106,9 +106,9 @@ const Skills = () => {
           <div className="h-1 w-20 bg-primary mx-auto rounded-full" />
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {skillCategories.map((cat) => (
-            <div key={cat.category} className="p-6 rounded-2xl bg-muted/30 border border-border hover:border-primary/50 transition-colors group cursor-default">
+            <div key={cat.category} className="p-6 rounded-2xl bg-muted/30 border border-border hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,255,127,0.08)] hover:-translate-y-1 transition-all duration-300 group cursor-default w-[calc(25%-1.5rem)] min-w-[260px]">
               <h3 className="text-xl font-semibold mb-6 text-foreground group-hover:text-primary transition-colors">
                 {cat.category}
               </h3>
@@ -120,7 +120,7 @@ const Skills = () => {
                     <Badge
                       key={skill}
                       variant="secondary"
-                      className="bg-background border-border text-foreground/80 hover:text-primary transition-colors cursor-default flex items-center gap-1.5"
+                      className="bg-background border-border text-foreground/80 hover:text-primary hover:border-primary/50 hover:shadow-[0_0_8px_rgba(0,255,127,0.15)] transition-all duration-300 cursor-default flex items-center gap-1.5"
                     >
                       {Icon && <Icon className="h-3.5 w-3.5" style={{ color }} />}
                       {skill}

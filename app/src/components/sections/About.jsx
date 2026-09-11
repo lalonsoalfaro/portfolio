@@ -1,4 +1,4 @@
-import profilePic from '../../assets/profile-pic.jpeg';
+import profilePic from '../../assets/profile.jpeg';
 
 const About = () => {
   return (
@@ -20,18 +20,18 @@ const About = () => {
           </div>
           <div className="space-y-6 text-left cursor-default">
             <p className="text-lg text-foreground/80 leading-relaxed">
-              Futuro Ingeniero de Software formado en la Universidad Técnica 
-              Nacional (UTN) de Costa Rica, con experiencia práctica en el desarrollo de soluciones 
+              Futuro Ingeniero de Software con 19 años formado en la Universidad Técnica 
+              Nacional (UTN) de Costa Rica, experiencia práctica en el desarrollo de soluciones 
               web y de escritorio utilizando tecnologías como React, C#, .NET y SQL 
               Server. Me motiva transformar requerimientos lógicos en software 
               limpio, escalable y bien estructurado.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="p-4 rounded-xl bg-muted/50 border border-border cursor-default">
+              <div className="p-4 rounded-xl bg-muted/50 border border-border cursor-default hover:border-primary/50 hover:shadow-[0_0_15px_rgba(0,255,127,0.08)] hover:-translate-y-0.5 transition-all duration-300">
                 <div className="text-primary font-bold text-xl mb-1">POO Avanzada</div>
                 <div className="text-sm text-foreground/60">Diseño Orientado a Objetos</div>
               </div>
-              <div className="p-4 rounded-xl bg-muted/50 border border-border cursor-default">
+              <div className="p-4 rounded-xl bg-muted/50 border border-border cursor-default hover:border-primary/50 hover:shadow-[0_0_15px_rgba(0,255,127,0.08)] hover:-translate-y-0.5 transition-all duration-300">
                 <div className="text-primary font-bold text-xl mb-1">Nivel 6</div>
                 <div className="text-sm text-foreground/60">UTN - Ingeniería del Software</div>
               </div>

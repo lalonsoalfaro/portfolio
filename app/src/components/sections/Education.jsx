@@ -28,7 +28,7 @@ const Education = () => {
         
         <div className="max-w-3xl mx-auto space-y-8">
           {educationData.map((edu, index) => (
-            <div key={index} className="relative pl-8 border-l-2 border-border hover:border-primary transition-colors group">
+            <div key={index} className="relative pl-8 border-l-2 border-border hover:border-primary hover:shadow-[0_0_15px_rgba(0,255,127,0.05)] transition-all duration-300 group py-2">
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-background border-2 border-border group-hover:border-primary transition-colors" />
               <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
                 <h3 className="text-xl font-bold">{edu.institution}</h3>

@@ -20,22 +20,22 @@ const Contact = () => {
             </p>
             
             <div className="space-y-4 pt-6">
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/50 border border-border">
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/50 border border-border hover:border-primary/50 hover:shadow-[0_0_15px_rgba(0,255,127,0.08)] hover:-translate-y-0.5 transition-all duration-300 cursor-default">
                 <Mail className="h-5 w-5 text-primary" />
                 <span className="text-foreground/80">[email@placeholder.com]</span>
               </div>
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/50 border border-border">
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/50 border border-border hover:border-primary/50 hover:shadow-[0_0_15px_rgba(0,255,127,0.08)] hover:-translate-y-0.5 transition-all duration-300 cursor-default">
                 <Github className="h-5 w-5 text-primary" />
                 <span className="text-foreground/80">[github.com/username]</span>
               </div>
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/50 border border-border">
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/50 border border-border hover:border-primary/50 hover:shadow-[0_0_15px_rgba(0,255,127,0.08)] hover:-translate-y-0.5 transition-all duration-300 cursor-default">
                 <Linkedin className="h-5 w-5 text-primary" />
                 <span className="text-foreground/80">[linkedin.com/in/username]</span>
               </div>
             </div>
           </div>
           
-          <div className="bg-background p-8 rounded-2xl border border-border shadow-sm">
+          <div className="bg-background p-8 rounded-2xl border border-border shadow-sm hover:shadow-[0_0_25px_rgba(0,255,127,0.06)] transition-all duration-300">
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
