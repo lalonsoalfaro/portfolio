@@ -36,6 +36,11 @@ const About = () => {
                 <div className="text-sm text-foreground/60">UTN - Ingeniería del Software</div>
               </div>
             </div>
+            <div className="flex items-center gap-3 pt-2">
+              <div className="h-px flex-1 bg-border" />
+              <span className="text-sm text-foreground/50 font-medium tracking-wide">Inglés Técnico B2</span>
+              <div className="h-px flex-1 bg-border" />
+            </div>
           </div>
         </div>
       </div>

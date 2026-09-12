@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Code2, Github, Linkedin, Mail, Check } from 'lucide-react';
+import { ArrowRight, Code2, Github, Linkedin, Mail, Check, FileText } from 'lucide-react';
 
 const Hero = () => {
   const [text, setText] = useState('');
@@ -62,13 +62,13 @@ const Hero = () => {
   };
   
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
       {/* Brillo de fondo equilibrado - Estilo tecnológico */}
       <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse" />
       <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[120px] animate-pulse" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px]" />
-      {/* Destellos blancos sutiles */}
       <div className="absolute top-1/3 left-1/4 w-1 h-1 bg-white/50 rounded-full blur-sm animate-ping" />
+      {/* Destellos blancos sutiles */}
       <div className="absolute bottom-1/3 right-1/4 w-1 h-1 bg-white/50 rounded-full blur-sm animate-ping [animation-delay:1s]" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -92,6 +92,11 @@ const Hero = () => {
           <Button size="lg" variant="outline" className="px-8 py-6 text-lg hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,127,0.3)] hover:border-primary/50 transition-all duration-300" onClick={scrollToContact}>
             Contactar
           </Button>
+          <a href="/cv/CV_Luis.pdf" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" variant="secondary" className="px-8 py-6 text-lg gap-2 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,127,0.3)] hover:border-primary/50 transition-all duration-300 border border-border">
+              <FileText className="h-5 w-5" /> Ver CV
+            </Button>
+          </a>
         </div>
 
         <div className="flex justify-center items-center gap-5 mt-8">

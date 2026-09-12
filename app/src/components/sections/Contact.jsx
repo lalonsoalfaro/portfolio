@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { Mail, Github, Linkedin, Check, X } from 'lucide-react';
 
 const Contact = () => {
+  const [toast, setToast] = useState({ show: false, message: '', type: '' });
+
+  const showToast = (message, type) => {
+    setToast({ show: true, message, type });
+    setTimeout(() => setToast({ show: false, message: '', type: '' }), 3000);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -10,7 +17,7 @@ const Contact = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email)) {
-      alert('Por favor ingresa un email válido.');
+      showToast('Por favor ingresa un email válido.', 'error');
       return;
     }
 
@@ -21,10 +28,10 @@ const Contact = () => {
     });
 
     if (response.ok) {
-      alert('¡Mensaje enviado correctamente!');
+      showToast('¡Mensaje enviado correctamente!', 'success');
       form.reset();
     } else {
-      alert('Hubo un error. Intenta de nuevo.');
+      showToast('Hubo un error. Intenta de nuevo.', 'error');
     }
   };
 
@@ -63,7 +70,6 @@ const Contact = () => {
           <div className="bg-background p-8 rounded-2xl border border-border shadow-sm hover:shadow-[0_0_25px_rgba(0,255,127,0.06)] transition-all duration-300">
             <form className="space-y-4" action="https://formspree.io/f/xzebqpzq" method="POST" onSubmit={handleSubmit}>
               <input type="hidden" name="_subject" value="Nuevo mensaje desde el portfolio" />
-              <input type="hidden" name="_next" value="/" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground/70">Nombre</label>
@@ -101,6 +107,13 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {toast.show && (
+        <div className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-4 py-3 rounded-xl text-white text-sm font-medium shadow-lg backdrop-blur-sm animate-in fade-in slide-in-from-bottom-4 duration-300 ${toast.type === 'success' ? 'bg-green-500/90 shadow-green-500/25' : 'bg-red-500/90 shadow-red-500/25'}`}>
+          {toast.type === 'success' ? <Check className="h-4 w-4" /> : <X className="h-4 w-4" />}
+          {toast.message}
+        </div>
+      )}
     </section>
   );
 };
