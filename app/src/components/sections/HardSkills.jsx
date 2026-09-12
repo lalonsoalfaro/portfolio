@@ -5,6 +5,7 @@ import {
   SiReact, SiVite, SiTailwindcss, SiShadcnui,
   SiNodedotjs, SiJsonwebtokens,
   SiGit, SiGithub, SiGitlab, SiSwagger, SiVirtualbox,
+  SiPython,
 } from 'react-icons/si';
 import { DiJava, DiMsqlServer, DiVisualstudio } from 'react-icons/di';
 import { TbSql } from 'react-icons/tb';
@@ -21,6 +22,7 @@ const skillIcons = {
   HTML5: SiHtml5,
   CSS: FaCss3Alt,
   'C++': SiCplusplus,
+  Python: SiPython,
   React: SiReact,
   Vite: SiVite,
   'Taildwind CSS': SiTailwindcss,
@@ -52,6 +54,7 @@ const skillColors = {
   HTML5: '#E34F26',
   CSS: '#1572B6',
   'C++': '#00599C',
+  Python: '#3776AB',
   React: '#61DAFB',
   Vite: '#BD34FE',
   'Taildwind CSS': '#06B6D4',
@@ -74,7 +77,7 @@ const Skills = () => {
   const skillCategories = [
     {
       category: 'Lenguajes',
-      skills: ['C#', 'Java', 'SQL', 'C++', 'JavaScript', 'HTML5', 'CSS'],
+      skills: ['C#', 'Java', 'Python', 'SQL', 'C++', 'JavaScript', 'HTML5', 'CSS'],
     },
     {
       category: 'Frontend',
