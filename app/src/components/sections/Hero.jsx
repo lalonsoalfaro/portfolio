@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Code2 } from 'lucide-react';
+import { ArrowRight, Code2, Github, Linkedin, Mail, Check } from 'lucide-react';
 
 const Hero = () => {
   const [text, setText] = useState('');
@@ -52,6 +52,14 @@ const Hero = () => {
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth'})
   };
+
+  const [showToast, setShowToast] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('luis.a.alfaro.c2007@gmail.com');
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2000);
+  };
   
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
@@ -85,7 +93,26 @@ const Hero = () => {
             Contactar
           </Button>
         </div>
+
+        <div className="flex justify-center items-center gap-5 mt-8">
+          <a href="https://github.com/lalonsoalfaro" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-primary transition-colors">
+            <Github className="h-5 w-5" />
+          </a>
+          <a href="https://www.linkedin.com/in/luis-alonso-alfaro/" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-primary transition-colors">
+            <Linkedin className="h-5 w-5" />
+          </a>
+          <button onClick={copyEmail} className="text-foreground/50 hover:text-primary transition-colors cursor-pointer">
+            <Mail className="h-5 w-5" />
+          </button>
+        </div>
       </div>
+
+      {showToast && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-4 py-3 rounded-xl bg-primary/90 text-white text-sm font-medium shadow-lg shadow-primary/25 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-4 duration-300">
+          <Check className="h-4 w-4" />
+          Email copiado al portapapeles
+        </div>
+      )}
     </section>
   );
 };
