@@ -64,16 +64,16 @@ const Hero = () => {
       <div className="absolute bottom-1/3 right-1/4 w-1 h-1 bg-white/50 rounded-full blur-sm animate-ping [animation-delay:1s]" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6 border border-primary/30 shadow-[0_0_10px_rgba(0,255,127,0.1)]">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6 border border-primary/30 shadow-[0_0_10px_rgba(0,255,127,0.1)] cursor-default">
           <Code2 className="h-3 w-3" />
           <span className="uppercase tracking-widest">Disponible para nuevas oportunidades</span>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-foreground bg-gradient-to-r from-white via-primary to-primary bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(0,255,127,0.3)]">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-foreground bg-gradient-to-r from-white via-primary to-primary bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(0,255,127,0.3)] cursor-default">
           Hola, soy <span className="text-primary">&#123; Luis Alonso Alfaro Cerdas &#125;</span>
         </h1>
         
-        <div className="text-2xl md:text-3xl font-medium text-foreground/80 mb-10 h-12 flex items-center justify-center">
+        <div className="text-2xl md:text-3xl font-medium text-foreground/80 mb-10 h-12 flex items-center justify-center cursor-default">
           <span className="border-r-4 border-primary pr-2 animate-pulse">{text}</span>
         </div>
         

@@ -6,13 +6,13 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-background/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 cursor-default">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Contacto</h2>
           <div className="h-1 w-20 bg-primary mx-auto rounded-full" />
         </div>
         
         <div className="grid md:grid-cols-2 gap-12">
-          <div className="text-left space-y-6">
+          <div className="text-left space-y-6 cursor-default">
             <h3 className="text-2xl font-bold mb-4">¿Hablamos?</h3>
             <p className="text-foreground/70 leading-relaxed">
               [Descripción placeholder: Estoy abierto a nuevas oportunidades, colaboraciones en 

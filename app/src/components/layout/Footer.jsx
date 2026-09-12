@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="bg-background border-t border-border py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center cursor-default">
         <div className="mb-6 font-bold text-lg text-primary">
           &#123; Luis Alonso Alfaro Cerdas &#125;
         </div>
