@@ -1,8 +1,33 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 
 const Contact = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      alert('Por favor ingresa un email válido.');
+      return;
+    }
+
+    const response = await fetch('https://formspree.io/f/xzebqpzq', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      alert('¡Mensaje enviado correctamente!');
+      form.reset();
+    } else {
+      alert('Hubo un error. Intenta de nuevo.');
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-background/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,13 +61,17 @@ const Contact = () => {
           </div>
 
           <div className="bg-background p-8 rounded-2xl border border-border shadow-sm hover:shadow-[0_0_25px_rgba(0,255,127,0.06)] transition-all duration-300">
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4" action="https://formspree.io/f/xzebqpzq" method="POST" onSubmit={handleSubmit}>
+              <input type="hidden" name="_subject" value="Nuevo mensaje desde el portfolio" />
+              <input type="hidden" name="_next" value="/" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground/70">Nombre</label>
                   <input
                     type="text"
-                    placeholder="[Nombre]"
+                    name="name"
+                    placeholder="Tu nombre"
+                    required
                     className="w-full px-4 py-2 rounded-lg bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                   />
                 </div>
@@ -50,7 +79,9 @@ const Contact = () => {
                   <label className="text-sm font-medium text-foreground/70">Email</label>
                   <input
                     type="email"
-                    placeholder="[Email]"
+                    name="email"
+                    placeholder="tu@email.com"
+                    required
                     className="w-full px-4 py-2 rounded-lg bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                   />
                 </div>
@@ -58,12 +89,14 @@ const Contact = () => {
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground/70">Mensaje</label>
                 <textarea
+                  name="message"
                   rows={4}
-                  placeholder="[Escribe tu mensaje aquí...]"
+                  placeholder="Escribe tu mensaje aquí..."
+                  required
                   className="w-full px-4 py-2 rounded-lg bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                 />
               </div>
-              <Button className="w-full py-6 text-lg">Enviar Mensaje</Button>
+              <Button type="submit" className="w-full py-6 text-lg">Enviar Mensaje</Button>
             </form>
           </div>
         </div>

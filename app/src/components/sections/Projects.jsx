@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Github, ChevronLeft, ChevronRight } from 'lucide-react';
 import RutaEstelar from '../../assets/Ruta-Estelar.png';
 import MatchPet from '../../assets/MatchPet.png';
 import UrbanSystem from '../../assets/UrbanSystem.png';
@@ -9,7 +9,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Ruta Estelar",
-      description: "Aplicación web para gestión de citas y reservas de un observatorio. Incluye autenticación JWT, roles de usuario, gestión de empleados, especialidades y servicios adicionales. Comunicación frontend/backend mediante API REST.",
+      description: "Aplicación web para gestión de citas y reservas de un observatorio astrónomico. Incluye autenticación JWT, roles de usuario, gestión de empleados, especialidades y servicios adicionales. Comunicación frontend/backend mediante API REST.",
       technologies: ["React", "JavaScript", "Vite", "Tailwind CSS", "shadcn/ui", "JWT", "REST API"],
       image: RutaEstelar,
       demo: "#",
@@ -70,7 +70,7 @@ const Projects = () => {
               {projects.map((project, index) => (
                 <div key={index} className="min-w-full flex flex-col md:flex-row">
                   <div className="w-full md:w-1/2 aspect-video md:aspect-square bg-card relative overflow-hidden flex items-center justify-center p-6">
-                    <div className="w-full h-full max-w-[420px] max-h-[320px] bg-muted/30 rounded-xl border border-border flex items-center justify-center overflow-hidden">
+                    <div className="w-full h-full max-w-[420px] max-h-[320px] bg-muted/30 rounded-xl border border-border flex items-center justify-center overflow-hidden hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,255,127,0.08)] hover:-translate-y-1 transition-all duration-300">
                       <img 
                         src={project.image} 
                         alt={project.title} 
@@ -82,25 +82,20 @@ const Projects = () => {
                     <h3 className="text-2xl font-bold mb-4 text-primary">
                       {project.title}
                     </h3>
-                    <p className="text-foreground/70 mb-8 leading-relaxed">
+                    <p className="text-foreground/70 mb-14 leading-relaxed">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-8">
+                    <div className="flex flex-wrap gap-2 mt-4 mb-4">
                       {project.technologies.map((tech) => (
                         <span key={tech} className="text-[10px] uppercase tracking-wider font-semibold px-2 py-1 rounded bg-muted border border-border text-foreground/60 cursor-default hover:text-primary hover:border-primary/50 hover:shadow-[0_0_8px_rgba(0,255,127,0.15)] transition-all duration-300">
                           {tech}
                         </span>
                       ))}
                     </div>
-                    <div className="flex items-center gap-4">
-                      <a href={project.repository} target="_blank" rel="noopener noreferrer" className="flex-1">
-                        <Button variant="outline" size="sm" className="w-full gap-2 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,127,0.3)] hover:border-primary/50 transition-all duration-300">
-                          <Github className="h-4 w-4" /> Código
-                        </Button>
-                      </a>
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
-                        <Button size="sm" className="w-full gap-2">
-                          <ExternalLink className="h-4 w-4" /> Demo
+                    <div className="flex justify-center mt-4">
+                      <a href={project.repository} target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline" className="gap-2 px-6 py-2 text-base hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,127,0.3)] hover:border-primary/50 transition-all duration-300">
+                          <Github className="h-5 w-5" /> Código
                         </Button>
                       </a>
                     </div>

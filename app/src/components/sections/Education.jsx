@@ -9,6 +9,13 @@ const Education = () => {
       period: "2025 - 2026",
       details: "Niveles 1 al 5 completados. Actualmente en el nivel 6. Formación en programación, bases de datos, arquitectura de software, estructuras de datos y desarrollo web."
     },
+    {
+      institution: "Universidad Técnica Nacional (UTN)",
+      degree: "Ingeniería del Software",
+      level: "Formación en inglés hasta nivel B2",
+      period: "2025–2026",
+      details: "Inglés técnico, documentación profesional, comunicación empresarial, emails, presentaciones, entrevistas simuladas y terminología del área de tecnología."
+    }
   ];
 
   const certificationsData = [

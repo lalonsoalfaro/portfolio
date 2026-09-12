@@ -28,7 +28,7 @@ const Footer = () => {
           </button>
         </div>
         <p className="text-sm text-foreground/50">
-          © {new Date().getFullYear()} Portafolio &#123; Luis Alonso Alfaro Cerdas &#125;. Todos los derechos reservados.
+          © {new Date().getFullYear()} Portafolio &#123; Luis Alonso Alfaro Cerdas &#125;. Casi todos los derechos reservados.
         </p>
       </div>
 
